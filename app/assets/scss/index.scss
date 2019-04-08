@@ -1,0 +1,154 @@
+// @import "variables";
+@import "fonts";
+@import "style_general";
+
+//BEM-blocks
+@import "../BEM-blocks/language-switcher/language-switcher.scss";
+@import "../BEM-blocks/header/header.scss";
+@import "../BEM-blocks/small-popup/small-popup.scss";
+@import "../BEM-blocks/bg-content/bg-content.scss";
+@import "../BEM-blocks/social-btns-main/social-btns-main.scss";
+
+.main {
+	position       : relative;
+	width          : 100vw;
+	height         : 100vh;
+	overflow       : hidden;
+}
+
+.index-section {
+	width          : 100vw;
+	height         : 100vh;
+	overflow       : hidden;
+	position       : relative;
+	background     : lightgrey;
+	display        : flex;
+	justify-content: center;
+	align-items    : center;
+	flex-wrap      : wrap;
+	&__bg-content {
+		position     : absolute;
+		width        : 100%;
+		height       : 100%;
+	}
+	&__bg-content-cover {
+		position         : absolute;
+		z-index          : 1;
+		width            : 100%;
+		height           : 100%;
+		background-color : rgba(0,0,0,.5);
+		transition       : background-color .3s;
+	}
+	&__lightbulb-holder {
+		width        : 100%;
+		height       : 70%;
+		position     : relative;
+		.lightbulb {
+			height     : calc(100% - 30px);
+			position   : absolute;
+			top        : 50%;
+			left       : 50%;
+			transform  : translate(-50%, calc(-50% + 30px) );
+		}
+		.logo {
+			height     : 30%;
+			position   : absolute;
+			z-index    : 3;
+			top        : 50%;
+			left       : 50%;
+			transform  : translate(-50%, calc(-110% + 30px));
+		}
+		.light-dim {
+			height     : 60%;
+			position   : absolute;
+			z-index    : 1;
+			top        : 50%;
+			left       : 50%;
+			transform  : translate(-50%, calc(-80% + 30px));
+		}
+		.light-glaring {
+			height     : 60%;
+			position   : absolute;
+			top        : 50%;
+			left       : 50%;
+			transform  : translate(-50%, calc(-80% + 30px));
+			z-index    : 2;
+			opacity    : 0;
+			transition : opacity .3s;
+		}
+	}
+	&__footer-inscription {
+		max-width    : 60%;
+		max-height   : 30%;
+		position     : relative;
+	}
+	&__navigation {
+		width        : 100%;
+		height       : 100%;
+		position     : absolute;
+		top          : 0;
+		left         : 0;
+		.main-navigation-list {
+			position: absolute;
+			z-index    : 4;
+			top        : 40px;
+			left       : 20px;
+			line-height: 40px
+		}
+		.main-navigation-list-item {
+			z-index    : 4;
+		}
+		.main-navigation-list-item:nth-of-type(1) {
+			top        : 20px;
+			left       : 50%;
+			transform  : translate(-50%);
+		}
+		.main-navigation-list-item:nth-of-type(2) {
+			top        : 25%;
+		}
+		.main-navigation-list-item:nth-of-type(3) {
+			top        : 40%;
+		}
+		.main-navigation-list-item:nth-of-type(4) {
+			top        : 55%;
+		}
+		.main-navigation-list-item:nth-of-type(5) {
+			top        : 25%;
+		}
+		.main-navigation-list-item:nth-of-type(6) {
+			top        : 40%;
+		}
+		.main-navigation-list-item:nth-of-type(7) {
+			top        : 55%;
+		}
+		.main-navigation-link {
+			font-size  : 1.6rem;
+			text-shadow:  10px  10px 20px white,
+			             -10px -10px 20px white,
+			              10px -10px 20px white,
+			             -10px  10px 20px white,
+			               0px  10px 20px white,
+			               0px -10px 20px white,
+			              10px   0px 20px white,
+			             -10px   0px 20px white;
+		}
+	}
+}
+
+.language-switcher-wrapper {
+	position       : absolute;
+	z-index        : 1;
+	right          : 10px;
+	top            : 10px;
+}
+
+.social-btns-main-wrapper {
+	position       : absolute;
+	z-index        : 1;
+	right          : 10px;
+	top            : 50%;
+	transform      : translate(0,-50%);
+}
+
+@import "index/index_768+";
+@import "index/index_992+";

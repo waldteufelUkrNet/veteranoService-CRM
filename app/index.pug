@@ -1,0 +1,74 @@
+doctype html
+html(lang='ua')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description' content="VeteranoService - свій до свого по своє ;-)")
+
+    title VeteranoService
+    link(rel='icon', href='assets/img/logo.png')
+
+    // css-libs (slick, animate ...)
+    link(rel='stylesheet', type='text/css', href='assets/libs-css/reset.css')
+    link(rel='stylesheet', type='text/css', href='assets/libs-css/animate.css')
+
+    // jquery
+    script(src='assets/libs/jquery.js')
+
+    // own stylesheet
+    link(rel='stylesheet', type='text/css', href='assets/css/index.css')
+
+  body
+    // HEADER
+    //- include assets/BEM-blocks/header/header.pug
+    // /HEADER
+
+    // MAIN SECTION
+    main.main
+      // SECTION 1
+      section.index-section
+        .index-section__bg-content
+          .index-section__bg-content-cover
+          include assets/BEM-blocks/bg-content/bg-content.pug
+
+        // лампочка
+        .index-section__lightbulb-holder
+          img.lightbulb(src='assets/img/lightbulb.png' alt='lightbulb.png')
+          img.logo(src='assets/img/logo.png' alt='logo.png')
+          img.light-dim(src='assets/img/light-dim.png' alt='light-dim.png')
+          img.light-glaring(src='assets/img/light-glaring.png' alt='light-glaring.png')
+
+        img.index-section__footer-inscription(src='assets/img/veterano_service.png' alt='veterano_service.png')
+
+        nav.index-section__navigation
+          ul.main-navigation-list
+            li.main-navigation-list-item.animated.bounceInDown: a.main-navigation-link(href='business.html') Бізнеси ветеранів
+            li.main-navigation-list-item.animated.bounceInRight: a.main-navigation-link(href='vacancy.html') Вакансії
+            li.main-navigation-list-item.animated.bounceInRight: a.main-navigation-link(href='useful.html') Корисно
+            li.main-navigation-list-item.animated.bounceInRight: a.main-navigation-link(href='help_for_business.html') Допомога бізнесу
+            li.main-navigation-list-item.animated.bounceInLeft: a.main-navigation-link(href='partners.html') Партнери
+            li.main-navigation-list-item.animated.bounceInLeft: a.main-navigation-link(href='about-us.html') Про нас
+            li.main-navigation-list-item.animated.bounceInLeft: a.main-navigation-link(href='news.html') Новини
+      // /SECTION 1
+
+      // SECTION 2
+      section.popups-section
+        //- include assets/BEM-blocks/popup-compliment/popup-compliment.pug
+        include assets/BEM-blocks/popup-no-russian-language-suppurt/popup-no-russian-language-suppurt.pug
+      // /SECTION 2
+
+      .language-switcher-wrapper
+        include assets/BEM-blocks/language-switcher/language-switcher.pug
+      .social-btns-main-wrapper
+        include assets/BEM-blocks/social-btns-main/social-btns-main.pug
+
+    // /MAIN SECTION
+
+    // FOOTER
+    //- include assets/BEM-blocks/footer/footer.pug
+    // /FOOTER
+
+    // scripts
+
+    // own js
+    script(src='assets/js/index.js')
