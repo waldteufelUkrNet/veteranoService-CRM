@@ -109,7 +109,7 @@ gulp.task('watch', gulp.parallel(
   gulp.series('sass', 'sass-bem', 'js', 'js-bem', 'pug', 'browser-sync'),
   function() {
     gulp.watch(['app/assets/scss/**/*.+(scss|sass)'], gulp.series('sass'));
-    gulp.watch(['app/assets/BEM-blocks/*/*.+(scss|sass)'], gulp.series('sass-bem','pug'));
+    gulp.watch(['app/assets/BEM-blocks/*/*.+(scss|sass)'], gulp.series('sass-bem','sass'));
 
     gulp.watch(['app/assets/js-expanded/*.js'], gulp.series('js'));
     gulp.watch(['app/assets/BEM-blocks/*/*.js', '!app/assets/BEM-blocks/minjs/*.js'], gulp.series('js-bem','pug'));

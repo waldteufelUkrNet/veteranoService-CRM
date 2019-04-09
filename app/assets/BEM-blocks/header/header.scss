@@ -1,5 +1,40 @@
 .header {
-	&__list {}
-	&__link {}
-	
+	height            : 60px;
+	width             : 100%;
+	max-width         : 1920px;
+	position          : fixed;
+	top               : 0;
+	left              : 50%;
+	transform         : translate(-50%);
+	background-color  : rgba(0,0,0,.5);
+	padding           : 0 15px;
+	overflow          : hidden;
+	font              : 20px spec;
+	&__list {
+		display         : flex;
+		justify-content : space-between;
+		align-items     : center;
+		li {
+			margin-left   : 20px;
+			&:first-of-type {
+				flex-grow   : 1;
+				margin-left : 0px;
+			}
+		}
+	}
+	&__link {
+		cursor          : pointer;
+		&_login {
+			display       : block;
+			height        : 60px;
+			line-height   : 54px;
+			text-shadow   : 0 0 3px white;
+		}
+	}
+	&__img {
+		height          : 60px;
+	}
+	img[src="assets/img/bell.png"] {
+		height          : 30px;
+	}
 }
